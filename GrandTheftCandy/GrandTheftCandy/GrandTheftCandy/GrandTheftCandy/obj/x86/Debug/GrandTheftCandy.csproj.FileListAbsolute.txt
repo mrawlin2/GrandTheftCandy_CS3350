@@ -1,0 +1,118 @@
+C:\Users\Amber\Documents\Matt's School\GameDesign\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\GrandTheftCandy.exe
+C:\Users\Amber\Documents\Matt's School\GameDesign\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\GrandTheftCandy.pdb
+C:\Users\Amber\Documents\Matt's School\GameDesign\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\GrandTheftCandy.csprojResolveAssemblyReference.cache
+C:\Users\Amber\Documents\Matt's School\GameDesign\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Amber\Documents\Matt's School\GameDesign\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\GrandTheftCandy.exe
+C:\Users\Amber\Documents\Matt's School\GameDesign\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\GrandTheftCandy.pdb
+C:\Users\Amber\Documents\Matt's School\GameDesign\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\Circle.xnb
+C:\Users\Amber\Documents\Matt's School\GameDesign\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\SplashScreen.xnb
+C:\Users\Amber\Documents\Matt's School\GameDesign\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\gameover0.xnb
+C:\Users\Amber\Documents\Matt's School\GameDesign\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Sounds\gameMusic.xnb
+C:\Users\Amber\Documents\Matt's School\GameDesign\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Sounds\gameMusic.wma
+C:\Users\Lauren\Documents\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\Circle.xnb
+C:\Users\Lauren\Documents\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\SplashScreen.xnb
+C:\Users\Lauren\Documents\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\gameover0.xnb
+C:\Users\Lauren\Documents\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Sounds\gameMusic.xnb
+C:\Users\Lauren\Documents\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Sounds\gameMusic.wma
+C:\Users\Lauren\Documents\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\GrandTheftCandy.exe
+C:\Users\Lauren\Documents\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\GrandTheftCandy.pdb
+C:\Users\Lauren\Documents\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\GrandTheftCandy.csprojResolveAssemblyReference.cache
+C:\Users\Lauren\Documents\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Lauren\Documents\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\GrandTheftCandy.exe
+C:\Users\Lauren\Documents\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\GrandTheftCandy.pdb
+C:\Users\Lauren\Documents\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\bluesquare.xnb
+C:\Users\Lauren\Documents\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\redsquare.xnb
+C:\Users\Lauren\Documents\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\winner.xnb
+C:\Users\Mine\Documents\GitHub\cs3350-fa14-grandtheftcandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\bluesquare.xnb
+C:\Users\Mine\Documents\GitHub\cs3350-fa14-grandtheftcandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\SplashScreen.xnb
+C:\Users\Mine\Documents\GitHub\cs3350-fa14-grandtheftcandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\gameover0.xnb
+C:\Users\Mine\Documents\GitHub\cs3350-fa14-grandtheftcandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\redsquare.xnb
+C:\Users\Mine\Documents\GitHub\cs3350-fa14-grandtheftcandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\winner.xnb
+C:\Users\Mine\Documents\GitHub\cs3350-fa14-grandtheftcandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\Circle.xnb
+C:\Users\Mine\Documents\GitHub\cs3350-fa14-grandtheftcandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Sounds\gameMusic.xnb
+C:\Users\Mine\Documents\GitHub\cs3350-fa14-grandtheftcandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Sounds\gameMusic.wma
+C:\Users\Mine\Documents\GitHub\cs3350-fa14-grandtheftcandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\GrandTheftCandy.exe
+C:\Users\Mine\Documents\GitHub\cs3350-fa14-grandtheftcandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\GrandTheftCandy.pdb
+C:\Users\Mine\Documents\GitHub\cs3350-fa14-grandtheftcandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\GrandTheftCandy.csprojResolveAssemblyReference.cache
+C:\Users\Mine\Documents\GitHub\cs3350-fa14-grandtheftcandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Mine\Documents\GitHub\cs3350-fa14-grandtheftcandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\GrandTheftCandy.exe
+C:\Users\Mine\Documents\GitHub\cs3350-fa14-grandtheftcandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\GrandTheftCandy.pdb
+C:\Users\Mine\Documents\GitHub\cs3350-fa14-grandtheftcandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\Line.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-FA14-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\bluesquare.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-FA14-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\SplashScreen.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-FA14-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\gameover0.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-FA14-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\redsquare.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-FA14-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\winner.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-FA14-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\Circle.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-FA14-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\Line.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-FA14-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Sounds\gameMusic.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-FA14-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Sounds\gameMusic.wma
+C:\Users\Amber\Documents\GitHub\CS3350-FA14-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\GrandTheftCandy.exe
+C:\Users\Amber\Documents\GitHub\CS3350-FA14-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\GrandTheftCandy.pdb
+C:\Users\Amber\Documents\GitHub\CS3350-FA14-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\GrandTheftCandy.csprojResolveAssemblyReference.cache
+C:\Users\Amber\Documents\GitHub\CS3350-FA14-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Amber\Documents\GitHub\CS3350-FA14-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\GrandTheftCandy.exe
+C:\Users\Amber\Documents\GitHub\CS3350-FA14-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\GrandTheftCandy.pdb
+C:\Users\Mine\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\bluesquare.xnb
+C:\Users\Mine\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\SplashScreen.xnb
+C:\Users\Mine\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\gameover0.xnb
+C:\Users\Mine\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\redsquare.xnb
+C:\Users\Mine\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\winner.xnb
+C:\Users\Mine\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\Circle.xnb
+C:\Users\Mine\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\Line.xnb
+C:\Users\Mine\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\floorbg.xnb
+C:\Users\Mine\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Sounds\gameMusic.xnb
+C:\Users\Mine\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Sounds\gameMusic.wma
+C:\Users\Mine\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\GrandTheftCandy.exe
+C:\Users\Mine\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\GrandTheftCandy.pdb
+C:\Users\Mine\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\GrandTheftCandy.csprojResolveAssemblyReference.cache
+C:\Users\Mine\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Mine\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\GrandTheftCandy.exe
+C:\Users\Mine\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\GrandTheftCandy.pdb
+C:\Users\Mine\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\mallbg.xnb
+C:\Users\Mine\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\candysprite0.xnb
+C:\Users\Mine\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\gamebar1.xnb
+C:\Users\Mine\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\stroller1.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Sounds\gameMusic.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\mainSpriteDownStill.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\mainSpriteLeftStill.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\mainSpriteRightStill.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\mainSpriteUpStill.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\bluesquare.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\candiesSprite.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\Circle.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\gameover0.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\guardsprite.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\hidingBush.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\hidingTrash.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\hidingTree.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\mallbg.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\redsquare.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\SplashScreen.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\stroller1.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\stroller2.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\winner.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\mainSpriteDown.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\mainSpriteLeft.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\mainSpriteRight.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\mainSpriteUp.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\floorbg.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\gamebar.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\cottoncandy.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\kiosk0.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\pauseTransparency.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\titleScreen.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\guardSpriteLeft.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\guardSpriteRight.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\momSpriteLeft.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\momSpriteLeftCandy.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\momSpriteRight.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\momSpriteRightCandy.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\SpriteFont1.xnb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Sounds\gameMusic.wma
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\GrandTheftCandy.exe
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\GrandTheftCandy.pdb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\GrandTheftCandy.exe
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\GrandTheftCandy.pdb
+C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\GrandTheftCandy.csprojResolveAssemblyReference.cache
