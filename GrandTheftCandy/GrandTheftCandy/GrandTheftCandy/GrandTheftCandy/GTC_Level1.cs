@@ -133,6 +133,8 @@ namespace GrandTheftCandy
          MediaPlayer.Play (backgroundSound);
          MediaPlayer.Volume = 50;
 
+         gameNotPaused = false;
+
          base.Initialize();
         }
 
@@ -345,8 +347,12 @@ namespace GrandTheftCandy
          #region Set Mothers Follow Paths
 
          Vector2[] mom1Path = new Vector2[2];
-         mom1Path[0] = new Vector2 (50, 600);
+         mom1Path[0] = new Vector2 (100, 600);
          mom1Path[1] = new Vector2 (550, 600);
+
+         Vector2[] momExitPath = new Vector2[2];
+         momExitPath[0] = new Vector2 (370, 260);
+         momExitPath[1] = new Vector2 (370, 0);
 
          Vector2[] mom2Path = new Vector2[3];
          mom2Path[0] = new Vector2 (1000, 800);
@@ -363,6 +369,9 @@ namespace GrandTheftCandy
          mothers[0].followPath = mom1Path;
          mothers[1].followPath = mom2Path;
          mothers[2].followPath = mom3Path;
+
+         // Test of the mothers exit path.
+         //mothers[0].setTempPath (momExitPath, false);
 
          #endregion
       }

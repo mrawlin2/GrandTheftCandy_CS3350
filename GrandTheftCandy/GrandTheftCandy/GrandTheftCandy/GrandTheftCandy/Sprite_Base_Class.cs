@@ -496,6 +496,10 @@ namespace GrandTheftCandy
             {
                calculateCurrentMovingAnimation ();
             }
+            else
+            {
+               calculateCurrentStillAnimation ();
+            }
 
             // Update the previous movement for the next cycle.
             m_PreviousMovement = m_CurrentMovement;
@@ -854,12 +858,15 @@ namespace GrandTheftCandy
    {
       #region Member Variables
 
-      private bool m_Moveable; // Keep
-      private int m_PathIndex; // Keep
-      private Vector2 m_CurrentDestination; // Keep
-      private Vector2 m_TemporaryDestination; // Keep
-      protected Vector2 m_CurrentMovementSpeed; //Keep
-      private Vector2[] m_FollowPath; // Keep
+      private bool m_Moveable;
+      protected bool m_StopAtTempDestination;
+      private int m_PathIndex;
+      private int m_TempPathIndex;
+      private Vector2 m_CurrentDestination;
+      private Vector2 m_TemporaryDestination;
+      protected Vector2 m_CurrentMovementSpeed;
+      private Vector2[] m_FollowPath;
+      private Vector2[] m_TempFollowPath;
 
 
       #endregion
@@ -870,10 +877,11 @@ namespace GrandTheftCandy
          Vector2 a_startingPosition, Vector2 a_MovementSpeed, Color a_renderColor, bool a_collidable, String a_SpriteName, int a_CollissionLevel)
          : base (a_game, a_textureFileNames, a_SpriteAnimationSequence, a_startingPosition, a_renderColor, a_collidable, a_SpriteName, a_CollissionLevel)
       {
-         // New Constructor Code
+         m_StopAtTempDestination = false;
          m_CurrentMovementSpeed = a_MovementSpeed;
          m_PathIndex = 0;
-         m_FollowPath = new Vector2[2];
+         m_FollowPath = null;
+         m_TempFollowPath = null;
       }
 
       #endregion
@@ -937,43 +945,85 @@ namespace GrandTheftCandy
          {
             if (m_Moveable)
             {
-               // If there is a temporary destination.
-               if ((m_TemporaryDestination != Vector2.Zero))
+               #region Normal Path Following Behavior
+               if (m_TempFollowPath == null)
                {
-                  // Is within the acceptable distance of the destination.
-                  if (isWithinDistanceOfDestination (3))
+                  // If there is a temporary destination.
+                  if ((m_TemporaryDestination != Vector2.Zero))
                   {
-                     m_TemporaryDestination = Vector2.Zero;
-                     m_CurrentDestination = m_FollowPath[m_PathIndex];
+                     // Is within the acceptable distance of the destination.
+                     if (isWithinDistanceOfDestination (3))
+                     {
+                        if (!m_StopAtTempDestination)
+                        {
+                           m_TemporaryDestination = Vector2.Zero;
+                           m_CurrentDestination = m_FollowPath[m_PathIndex];
+                        }
+                        else
+                        {
+                           moveable = false;
+                           m_StopAtTempDestination = false;
+                        }
+                     }
+                     else
+                     {
+                        m_CurrentDestination = m_TemporaryDestination;
+                     }
                   }
                   else
                   {
-                     m_CurrentDestination = m_TemporaryDestination;
+                     if (m_CurrentDestination != m_FollowPath[m_PathIndex])
+                     {
+                        m_CurrentDestination = m_FollowPath[m_PathIndex];
+                     }
+                     else if (isWithinDistanceOfDestination (3))
+                     {
+                        m_PathIndex++;
+                        if (m_PathIndex >= m_FollowPath.Length)
+                        {
+                           m_PathIndex = 0;
+                        }
+                        m_CurrentDestination = m_FollowPath[m_PathIndex];
+                     }
                   }
                }
+               #endregion
+               #region Temporary Path Following
                else
                {
-                  if (m_CurrentDestination != m_FollowPath[m_PathIndex])
+                  if (m_CurrentDestination != m_TempFollowPath[m_TempPathIndex])
                   {
-                     m_CurrentDestination = m_FollowPath[m_PathIndex];
+                     m_CurrentDestination = m_TempFollowPath[m_TempPathIndex];
                   }
                   else if (isWithinDistanceOfDestination (3))
                   {
-                     m_PathIndex++;
-                     if (m_PathIndex >= m_FollowPath.Length)
+                     m_TempPathIndex++;
+                     if (m_TempPathIndex >= m_TempFollowPath.Length)
                      {
-                        m_PathIndex = 0;
+                        if (m_StopAtTempDestination)
+                        {
+                           m_Moveable = false;
+                        }
+                        else
+                        {
+                           m_TempFollowPath = null;
+                           m_PathIndex = 0;
+                           m_StopAtTempDestination = false;
+                        }
                      }
-                     m_CurrentDestination = m_FollowPath[m_PathIndex];
                   }
                }
+               #endregion
 
                // Calculate the new movement vector based on the current destination.
                m_CurrentMovement = m_CurrentDestination - this.spritePosition;
-               m_CurrentMovement.Normalize ();
 
-               this.m_spritePosition += (m_CurrentMovementSpeed * m_CurrentMovement);
-               calculateDrawOrder ();
+               if (currentMovement != Vector2.Zero)
+               {
+                  m_CurrentMovement.Normalize ();
+                  this.m_spritePosition += (m_CurrentMovementSpeed * m_CurrentMovement);
+                  calculateDrawOrder ();
+               }
             }
             else
             {
@@ -1012,9 +1062,28 @@ namespace GrandTheftCandy
       /// Once reached the NPC will return to its normal path.
       /// </summary>
       /// <param name="a_Destination"></param>
-      public void setTempDestination (Vector2 a_Destination)
+      public void setTempDestination (Vector2 a_Destination, bool a_StopAtTempDestination)
       {
+         if (!moveable)
+         {
+            moveable = true;
+         }
+         m_StopAtTempDestination = a_StopAtTempDestination;
          m_TemporaryDestination = a_Destination;
+      }
+
+      /// <summary>
+      /// Sets a temporary path for the NPC to follow. 
+      /// If desired the NPC will stop moving once the last node in the path is reached.
+      /// Otherwise the NPC will go to the start of their normal path.
+      /// </summary>
+      /// <param name="a_TempFollowPath"></param>
+      /// <param name="a_StopAtTempDestination"></param>
+      public void setTempPath (Vector2[] a_TempFollowPath, bool a_StopAtTempDestination)
+      {
+         m_TempFollowPath = a_TempFollowPath;
+         m_TempPathIndex = 0;
+         m_StopAtTempDestination = a_StopAtTempDestination;
       }
 
       #endregion
@@ -1224,12 +1293,12 @@ namespace GrandTheftCandy
             if (isWithinDetectionRadius && !((GTC_Level1)this.Game).player.isHidden)
             {
                m_FollowingPlayer = true;
-               setTempDestination (((GTC_Level1)this.Game).player.playerPosition);
+               setTempDestination (((GTC_Level1)this.Game).player.playerPosition, false);
             }
             else
             {
                m_FollowingPlayer = false;
-               setTempDestination (Vector2.Zero);
+               setTempDestination (Vector2.Zero, false);
             }
 
             base.Update (gameTime);
@@ -1292,6 +1361,7 @@ namespace GrandTheftCandy
             this.Visible = false;
             this.DrawOrder = 100;
             this.Game.IsMouseVisible = false;
+            ((GTC_Level1)this.Game).gameNotPaused = true;
             ((Player_Controlled_Sprite)((GTC_Level1)this.Game).Components[0]).movementAllowed = true;
             ((GTC_Level1)this.Game).gameBar.Visible = true;
          }
