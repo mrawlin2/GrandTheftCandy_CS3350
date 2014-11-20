@@ -66,6 +66,8 @@ namespace GrandTheftCandy
 
       Vector2 screenCenter;
       Vector2 candyStoreEntrance;
+      Vector2 guardEnterPoint;
+      Vector2[] momExitPath;
 
       #endregion
 
@@ -80,7 +82,7 @@ namespace GrandTheftCandy
          Content.RootDirectory = "Content";
          cameraPosition = Matrix.CreateTranslation(new Vector3(0, 0, 1));
          mothers = new NPC_Mother_Class[5];
-         guards = new NPC_Guard_Class[2];
+         guards = new NPC_Guard_Class[5];
          folliage = new Sprite_Base_Class[8];
          gameNotPaused = true;
          ableToPause = true;
@@ -133,6 +135,12 @@ namespace GrandTheftCandy
          MediaPlayer.Play(backgroundSound);
          MediaPlayer.Volume = .2f;
          MediaPlayer.IsRepeating = true;
+
+         momExitPath = new Vector2[2];
+         momExitPath[0] = new Vector2 (370, 260);
+         momExitPath[1] = new Vector2 (370, 0);
+
+         guardEnterPoint = new Vector2 (1500, 300);
 
          gameNotPaused = false;
 
@@ -198,7 +206,7 @@ namespace GrandTheftCandy
                player.candyCount++;
                for (int c = 0; c < guards.Length; c++)
                {
-                  guards[c].detectionRadius += 50;
+                  guards[c].detectionRadius += 25;
                }
             }
          }
@@ -285,17 +293,110 @@ namespace GrandTheftCandy
             }
          }
 
-      if (!ableToPause && pauseTimer > 0)
-      {
-         pauseTimer--;
-      }
+         if (!ableToPause && pauseTimer > 0)
+         {
+            pauseTimer--;
+         }
 
-      if (pauseTimer < 1 && !ableToPause)
-      {
-         ableToPause = true;
-      }
+         if (pauseTimer < 1 && !ableToPause)
+         {
+            ableToPause = true;
+         }
 
-      #endregion
+         #endregion
+
+         #region Guard Spawning
+
+         if (player.candyCount == 5)
+         {
+            if (guards[1].followPath == null)
+            {
+               Vector2[] guard2Path = new Vector2[4];
+
+               guard2Path[0] = new Vector2 (200, 300);
+               guard2Path[1] = new Vector2 (1500, 300);
+               guard2Path[2] = new Vector2 (1500, 500);
+               guard2Path[3] = new Vector2 (200, 500);
+
+               guards[1].followPath = guard2Path;
+
+               guards[1].setTempDestination (guardEnterPoint, false);
+            }
+         }
+
+         if (player.candyCount == 15)
+         {
+            if (guards[2].followPath == null)
+            {
+               Vector2[] guard3Path = new Vector2[4];
+               guard3Path[0] = new Vector2 (200, 600);
+               guard3Path[1] = new Vector2 (1500, 600);
+               guard3Path[2] = new Vector2 (1500, 850);
+               guard3Path[3] = new Vector2 (200, 850);
+
+               guards[2].followPath = guard3Path;
+
+               guards[2].setTempDestination (guardEnterPoint, false);
+            }
+         }
+
+         if (player.candyCount == 25)
+         {
+            if (guards[3].followPath == null)
+            {
+               Vector2[] guard4Path = new Vector2[4];
+               guard4Path[0] = new Vector2 (1700, 300);
+               guard4Path[1] = new Vector2 (2800, 300);
+               guard4Path[2] = new Vector2 (2800, 450);
+               guard4Path[3] = new Vector2 (1700, 450);
+
+               guards[3].followPath = guard4Path;
+
+               guards[3].setTempDestination (guardEnterPoint, false);
+            }
+         }
+
+         if (player.candyCount == 40)
+         {
+            if (guards[4].followPath == null)
+            {
+               Vector2[] guard5Path = new Vector2[4];
+               guard5Path[0] = new Vector2 (1950, 550);
+               guard5Path[1] = new Vector2 (2800, 550);
+               guard5Path[2] = new Vector2 (2800, 800);
+               guard5Path[3] = new Vector2 (1950, 800);
+
+               guards[4].followPath = guard5Path;
+
+               guards[4].setTempDestination (guardEnterPoint, false);
+            }
+         }
+
+         #endregion
+
+         #region Mothers Leaving
+
+         if (player.candyCount == 10)
+         {
+            mothers[1].setTempPath (momExitPath, true);
+         }
+
+         if (player.candyCount == 20)
+         {
+            mothers[2].setTempPath (momExitPath, true);
+         }
+
+         if (player.candyCount ==30)
+         {
+            mothers[3].setTempPath (momExitPath, true);
+         }
+
+         if (player.candyCount == 35)
+         {
+            mothers[4].setTempPath (momExitPath, true);
+         }
+
+         #endregion
 
          base.Update(gameTime);
       }
@@ -328,14 +429,14 @@ namespace GrandTheftCandy
       public void initializeMothers ()
       {
          int[] MotherSpriteAnimation = new int[8] { 1, 5, 1, 5, 1, 5, 1, 5 };
-         string[] MotherSprites = new string[8] { @"Resources\Images\stroller1", @"Resources\Images\momSpriteLeftCandy",
-            @"Resources\Images\stroller1", @"Resources\Images\momSpriteLeftCandy",
-            @"Resources\Images\stroller1", @"Resources\Images\momSpriteRightCandy",
-            @"Resources\Images\stroller1", @"Resources\Images\momSpriteRightCandy"};
-         string[] MotherSpritesAlternate = new string[8] { @"Resources\Images\stroller2", @"Resources\Images\momSpriteLeft",
-            @"Resources\Images\stroller2", @"Resources\Images\momSpriteLeft",
-            @"Resources\Images\stroller2", @"Resources\Images\momSpriteRight",
-            @"Resources\Images\stroller2", @"Resources\Images\momSpriteRight"};
+         string[] MotherSprites = new string[8] { @"Resources\Images\momSpriteLeftStandingCandy", @"Resources\Images\momSpriteLeftCandy",
+            @"Resources\Images\momSpriteLeftStandingCandy", @"Resources\Images\momSpriteLeftCandy",
+            @"Resources\Images\momSpriteRightStandingCandy", @"Resources\Images\momSpriteRightCandy",
+            @"Resources\Images\momSpriteRightStandingCandy", @"Resources\Images\momSpriteRightCandy"};
+         string[] MotherSpritesAlternate = new string[8] { @"Resources\Images\momSpriteLeftStanding", @"Resources\Images\momSpriteLeft",
+            @"Resources\Images\momSpriteLeftStanding", @"Resources\Images\momSpriteLeft",
+            @"Resources\Images\momSpriteRightStanding", @"Resources\Images\momSpriteRight",
+            @"Resources\Images\momSpriteRightStanding", @"Resources\Images\momSpriteRight"};
          mothers[0] = new NPC_Mother_Class (this, MotherSprites, MotherSpritesAlternate, MotherSpriteAnimation, MotherSpriteAnimation,
             new Vector2 (100, 300), new Vector2 (3f ,3f), Color.White, true, "Mother0", 500, 2);
          mothers[1] = new NPC_Mother_Class (this, MotherSprites, MotherSpritesAlternate, MotherSpriteAnimation, MotherSpriteAnimation,
@@ -368,16 +469,11 @@ namespace GrandTheftCandy
          mom4Path[0] = new Vector2(2800, 300);
          mom4Path[1] = new Vector2(2800, 900);
 
-
          Vector2[] mom5Path = new Vector2[4];
          mom5Path[0] = new Vector2(750, 900);
          mom5Path[1] = new Vector2(1500, 750);
          mom5Path[2] = new Vector2(2250, 900);
          mom5Path[3] = new Vector2(1500, 750);
-
-         Vector2[] momExitPath = new Vector2[2];
-         momExitPath[0] = new Vector2 (370, 260);
-         momExitPath[1] = new Vector2 (370, 0);
 
          mothers[0].moveable = mothers[1].moveable =
          mothers[2].moveable = mothers[3].moveable =
@@ -388,8 +484,6 @@ namespace GrandTheftCandy
          mothers[2].followPath = mom3Path;
          mothers[3].followPath = mom4Path;
          mothers[4].followPath = mom5Path;
-         // Test of the mothers exit path.
-         //mothers[0].setTempPath (momExitPath, false);
 
          #endregion
       }
@@ -403,10 +497,14 @@ namespace GrandTheftCandy
             @"Resources\Images\guardsprite", @"Resources\Images\guardSpriteRight"};
          guards[0] = new NPC_Guard_Class (this, GuardSprite, guardAnimations, new Vector2 (1000, 400), new Vector2 (4f, 4f),
             Color.White, true, "Guard0", 0, 2);
-         guards[1] = new NPC_Guard_Class (this, GuardSprite, guardAnimations, new Vector2 (200, 500), new Vector2 (4f, 4f),
+         guards[1] = new NPC_Guard_Class (this, GuardSprite, guardAnimations, new Vector2 (1500, 50), new Vector2 (4f, 4f),
             Color.White, true, "Guard1", 0, 2);
-         //guards[2] = new NPC_Guard_Class(this, GuardSprite, guardAnimations, new Vector2(200, 600), new Vector2(4f, 4f),
-         //  Color.White, true, "Guard2", 0, 2);
+         guards[2] = new NPC_Guard_Class (this, GuardSprite, guardAnimations, new Vector2 (1500, 50), new Vector2 (4f, 4f),
+           Color.White, true, "Guard2", 0, 2);
+         guards[3] = new NPC_Guard_Class (this, GuardSprite, guardAnimations, new Vector2 (1500, 50), new Vector2 (4f, 4f),
+           Color.White, true, "Guard3", 0, 2);
+         guards[4] = new NPC_Guard_Class (this, GuardSprite, guardAnimations, new Vector2 (1500, 50), new Vector2 (4f, 4f),
+           Color.White, true, "Guard4", 0, 2);
          #region Set Guard Paths
 
          // Create a path of four waypoints for the guard to follow.
@@ -416,35 +514,10 @@ namespace GrandTheftCandy
          guard1Path[2] = new Vector2 (2100, 850);
          guard1Path[3] = new Vector2 (2100, 350);
 
-         Vector2[] guard2Path = new Vector2[4];
-         guard2Path[0] = new Vector2 (200, 300);
-         guard2Path[1] = new Vector2 (1500, 300);
-         guard2Path[2] = new Vector2 (1500, 500);
-         guard2Path[3] = new Vector2 (200, 500);
-
-         Vector2[] guard3Path = new Vector2[4];
-         guard3Path[0] = new Vector2(200, 600);
-         guard3Path[1] = new Vector2(1500, 600);
-         guard3Path[2] = new Vector2(1500, 850);
-         guard3Path[3] = new Vector2(200, 850);
-
-         Vector2[] guard4Path = new Vector2[4];
-         guard4Path[0] = new Vector2(1700, 300);
-         guard4Path[1] = new Vector2(2800, 300);
-         guard4Path[2] = new Vector2(2800, 450);
-         guard4Path[3] = new Vector2(1700, 450);
-
-         Vector2[] guard5Path = new Vector2[4];
-         guard5Path[0] = new Vector2(1950, 550);
-         guard5Path[1] = new Vector2(2800, 550);
-         guard5Path[2] = new Vector2(2800, 800);
-         guard5Path[3] = new Vector2(1950, 800);
-
          // Enable the guard to move and set the path.
-         guards[0].moveable = guards[1].moveable = true;
+         guards[0].moveable = true;
          guards[0].followPath = guard1Path;
-         guards[1].followPath = guard2Path;
-         
+
          #endregion
       }
 

@@ -919,6 +919,10 @@ namespace GrandTheftCandy
       /// </summary>
       public Vector2[] followPath
       {
+         get
+         {
+            return m_FollowPath;
+         }
          set
          {
             m_FollowPath = value;
@@ -946,6 +950,7 @@ namespace GrandTheftCandy
             if (m_Moveable)
             {
                #region Normal Path Following Behavior
+
                if (m_TempFollowPath == null)
                {
                   // If there is a temporary destination.
@@ -957,7 +962,14 @@ namespace GrandTheftCandy
                         if (!m_StopAtTempDestination)
                         {
                            m_TemporaryDestination = Vector2.Zero;
-                           m_CurrentDestination = m_FollowPath[m_PathIndex];
+                           if (m_FollowPath != null)
+                           {
+                              m_CurrentDestination = m_FollowPath[m_PathIndex];
+                           }
+                           else
+                           {
+                              m_CurrentDestination = this.m_spritePosition;
+                           }
                         }
                         else
                         {
@@ -970,7 +982,7 @@ namespace GrandTheftCandy
                         m_CurrentDestination = m_TemporaryDestination;
                      }
                   }
-                  else
+                  else if (m_FollowPath != null)
                   {
                      if (m_CurrentDestination != m_FollowPath[m_PathIndex])
                      {
@@ -985,6 +997,10 @@ namespace GrandTheftCandy
                         }
                         m_CurrentDestination = m_FollowPath[m_PathIndex];
                      }
+                  }
+                  else
+                  {
+                     m_CurrentDestination = this.spritePosition;
                   }
                }
                #endregion

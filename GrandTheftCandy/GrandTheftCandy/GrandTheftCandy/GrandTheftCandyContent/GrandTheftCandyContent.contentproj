@@ -111,11 +111,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Resources\Images\mallbg.png">
-      <Name>mallbg</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Resources\Images\redsquare.png">
       <Name>redsquare</Name>
       <Importer>TextureImporter</Importer>
@@ -239,6 +234,35 @@
     </Compile>
     <Compile Include="Resources\Images\momSpriteRightCandy.png">
       <Name>momSpriteRightCandy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\Images\momSpriteLeftStanding.png">
+      <Name>momSpriteLeftStanding</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Resources\Images\momSpriteLeftStandingCandy.png">
+      <Name>momSpriteLeftStandingCandy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Resources\Images\momSpriteRightStanding.png">
+      <Name>momSpriteRightStanding</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Resources\Images\momSpriteRightStandingCandy.png">
+      <Name>momSpriteRightStandingCandy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\Images\mallbg.png">
+      <Name>mallbg</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

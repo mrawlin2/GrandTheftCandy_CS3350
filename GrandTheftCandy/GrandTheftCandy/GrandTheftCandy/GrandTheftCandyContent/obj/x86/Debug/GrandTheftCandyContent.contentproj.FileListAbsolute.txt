@@ -4,5 +4,5 @@ C:\Users\Mine\Documents\GitHub\cs3350-fa14-grandtheftcandy\GrandTheftCandy\Grand
 C:\Users\Amber\Documents\GitHub\CS3350-FA14-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandyContent\obj\x86\Debug\GrandTheftCandyContent.contentprojResolveAssemblyReference.cache
 C:\Users\Mine\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandyContent\obj\x86\Debug\GrandTheftCandyContent.contentprojResolveAssemblyReference.cache
 C:\Users\Amber\Documents\GitHub\CS3350-GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandyContent\obj\x86\Debug\GrandTheftCandyContent.contentprojResolveAssemblyReference.cache
-C:\Users\Amber\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandyContent\obj\x86\Debug\GrandTheftCandyContent.contentprojResolveAssemblyReference.cache
 C:\Users\Jeff\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandyContent\obj\x86\Debug\GrandTheftCandyContent.contentprojResolveAssemblyReference.cache
+C:\Users\Amber\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandyContent\obj\x86\Debug\GrandTheftCandyContent.contentprojResolveAssemblyReference.cache
