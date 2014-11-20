@@ -124,7 +124,7 @@ namespace GrandTheftCandy
          candyEntrance.Visible = false;
          gameBar.Visible = false;
 
-         Splash_Screen splashScreen = new Splash_Screen(this, @"Resources\Images\titleScreen", screenCenter, Color.White, "Splash Screen");
+         Splash_Screen splashScreen = new Splash_Screen(this, @"Resources\Images\titleScreen2", screenCenter, Color.White, "Splash Screen");
 
          gameOver = new Sprite_Base_Class(this, @"Resources\Images\gameover", screenCenter, false, 500, "Game Over 1");
          gameOver.Visible = false;

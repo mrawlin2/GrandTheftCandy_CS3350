@@ -42,3 +42,4 @@ Content\SpriteFont1.xnb
 Content\Resources\Images\gameover.xnb
 Content\Resources\Images\winnerShop.xnb
 Content\Resources\Images\instructions.xnb
+Content\Resources\Images\titleScreen2.xnb
