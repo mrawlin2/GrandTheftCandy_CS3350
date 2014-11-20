@@ -1,9 +1,13 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrandTheftCandy", "GrandTheftCandy\GrandTheftCandy\GrandTheftCandy.csproj", "{1A5F18CE-7F43-4402-80A5-B17F64E19DE8}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "GrandTheftCandyContent", "GrandTheftCandy\GrandTheftCandyContent\GrandTheftCandyContent.contentproj", "{4683467A-31D5-40C3-B012-EE726ED738FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrandTheftCandyContent", "GrandTheftCandy\GrandTheftCandyContent\GrandTheftCandyContent.contentproj", "{4683467A-31D5-40C3-B012-EE726ED738FB}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "setup", "setup\setup.vdproj", "{48E0C8E2-7C72-4DA1-AC74-86440A2E9F18}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +21,8 @@ Global
 		{1A5F18CE-7F43-4402-80A5-B17F64E19DE8}.Release|x86.Build.0 = Release|x86
 		{4683467A-31D5-40C3-B012-EE726ED738FB}.Debug|x86.ActiveCfg = Debug|x86
 		{4683467A-31D5-40C3-B012-EE726ED738FB}.Release|x86.ActiveCfg = Release|x86
+		{48E0C8E2-7C72-4DA1-AC74-86440A2E9F18}.Debug|x86.ActiveCfg = Debug
+		{48E0C8E2-7C72-4DA1-AC74-86440A2E9F18}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
