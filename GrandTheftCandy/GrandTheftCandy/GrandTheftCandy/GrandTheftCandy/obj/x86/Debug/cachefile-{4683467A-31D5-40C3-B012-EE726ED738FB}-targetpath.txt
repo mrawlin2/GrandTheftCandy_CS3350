@@ -39,3 +39,5 @@ Content\Resources\Images\momSpriteLeftStandingCandy.xnb
 Content\Resources\Images\momSpriteRightStanding.xnb
 Content\Resources\Images\momSpriteRightStandingCandy.xnb
 Content\SpriteFont1.xnb
+Content\Resources\Images\gameover.xnb
+Content\Resources\Images\winnerShop.xnb

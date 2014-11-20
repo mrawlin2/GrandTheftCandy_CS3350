@@ -205,3 +205,6 @@ C:\Users\Amber\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandThef
 C:\Users\Amber\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\momSpriteLeftStandingCandy.xnb
 C:\Users\Amber\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\momSpriteRightStanding.xnb
 C:\Users\Amber\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\momSpriteRightStandingCandy.xnb
+C:\Users\Amber\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\gameover.xnb
+C:\Users\Amber\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\GrandTheftCandy.csprojResolveAssemblyReference.cache
+C:\Users\Amber\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\winnerShop.xnb

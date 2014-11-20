@@ -49,13 +49,18 @@ namespace GrandTheftCandy
       public Matrix cameraPosition;
       public bool gameNotPaused;
       private bool ableToPause;
+      private bool ableToInstruct;
+      private bool gameOverBool;
       private int pauseTimer;
+      private int instructionTimer;
+      private int gameOverTimer;
 
       public Player_Controlled_Sprite player;
       NPC_Mother_Class[] mothers;
       NPC_Guard_Class[] guards;
       Sprite_Base_Class[] folliage;
       Sprite_Base_Class pauseScreen;
+      Sprite_Base_Class instructionScreen;
       Sprite_Base_Class candyEntrance;
       Sprite_Base_Class winScreen;
       Sprite_Base_Class gameOver;
@@ -85,8 +90,12 @@ namespace GrandTheftCandy
          guards = new NPC_Guard_Class[5];
          folliage = new Sprite_Base_Class[8];
          gameNotPaused = true;
+         ableToInstruct = true;
          ableToPause = true;
+         gameOverBool = false;
+         instructionTimer = 0;
          pauseTimer = 0;
+         gameOverTimer = 0;
       }
 
       #endregion
@@ -117,14 +126,17 @@ namespace GrandTheftCandy
 
          Splash_Screen splashScreen = new Splash_Screen(this, @"Resources\Images\titleScreen", screenCenter, Color.White, "Splash Screen");
 
-         gameOver = new Sprite_Base_Class(this, @"Resources\Images\gameover0", screenCenter, false, 500, "Game Over 1");
+         gameOver = new Sprite_Base_Class(this, @"Resources\Images\gameover", screenCenter, false, 500, "Game Over 1");
          gameOver.Visible = false;
 
-         winScreen = new Sprite_Base_Class(this, @"Resources\Images\winner", screenCenter, false, 1000, "Game Over 2");
+         winScreen = new Sprite_Base_Class(this, @"Resources\Images\winnerShop", screenCenter, false, 1000, "Game Over 2");
          winScreen.Visible = false;
 
          pauseScreen = new Sprite_Base_Class(this, @"Resources\Images\pauseTransparency", screenCenter, false, 1000, "Pause Screen");
          pauseScreen.Visible = false;
+
+         instructionScreen = new Sprite_Base_Class (this, @"Resources\Images\pauseTransparency", screenCenter, false, 1000, "Instruction Screen");
+         instructionScreen.Visible = false;
 
          cottonCandyBomb = new Cotton_Candy_Bomb (this, @"Resources\Images\cottoncandy", screenCenter, 250, "Cotton Candy");
          cottonCandyBomb.Visible = false;
@@ -184,218 +196,269 @@ namespace GrandTheftCandy
 
          #endregion
 
-         #region Win Condition
-
-         if (player.isWithinSpriteBoundry(candyEntrance) && player.candyCount>4)
+         if (!gameOverBool)
          {
-            winScreen.Visible = true;
-            player.movementAllowed = false;
-            cameraPosition = Matrix.CreateTranslation (Vector3.Zero);
-         }
+            #region Win Condition
 
-         #endregion
-
-         #region Candy Stealing
-
-         for (int i = 0; i < mothers.Length; i++)
-         {
-            if ((player.collidesWithAbove (mothers[i]) || player.collidesWithBelow (mothers[i])) && mothers[i].hasCandy)
+            if (player.isWithinSpriteBoundry (candyEntrance) && player.candyCount > 49)
             {
-               mothers[i].hasCandy = false;
-               mothers[i].candyRespawnTimer = 150;
-               player.candyCount++;
-               for (int c = 0; c < guards.Length; c++)
+               winScreen.Visible = true;
+               player.movementAllowed = false;
+               cameraPosition = Matrix.CreateTranslation (Vector3.Zero);
+               gameOverBool = true;
+            }
+
+            #endregion
+
+            #region Candy Stealing
+
+            for (int i = 0; i < mothers.Length; i++)
+            {
+               if ((player.collidesWithAbove (mothers[i]) || player.collidesWithBelow (mothers[i])) && mothers[i].hasCandy)
                {
-                  guards[c].detectionRadius += 25;
+                  mothers[i].hasCandy = false;
+                  mothers[i].candyRespawnTimer = 150;
+                  player.candyCount++;
+                  for (int c = 0; c < guards.Length; c++)
+                  {
+                     guards[c].detectionRadius += 25;
+                  }
                }
             }
-         }
 
-         #endregion
+            #endregion
 
-         #region Getting Caught (Losing)
+            #region Getting Caught (Losing)
 
-         for (int i = 0; i < guards.Length; i++)
-         {
-            if (((player.collides (guards[i]) || 
-               player.collidesHorizontally (guards[i])) && guards[i].followingPlayer) &&
-               !player.isHidden)
-            {
-               cameraPosition = Matrix.CreateTranslation (Vector3.Zero);
-               player.movementAllowed = false;
-               gameOver.Visible = true;
-            }
-         }
-
-         #endregion
-
-         #region Cotton Candy Radius Detection
-         if (cottonCandyBomb.isActive)
-         {
             for (int i = 0; i < guards.Length; i++)
             {
-               if (cottonCandyBomb.isWithinDetectionRadius( guards[i]))
+               if (((player.collides (guards[i]) ||
+                  player.collidesHorizontally (guards[i])) && guards[i].followingPlayer) &&
+                  !player.isHidden)
                {
-                  guards[i].detectionRadius = (guards[i].detectionRadius/2);
+                  cameraPosition = Matrix.CreateTranslation (Vector3.Zero);
+                  player.movementAllowed = false;
+                  gameOver.Visible = true;
+                  gameOverBool = true;
                }
             }
-         }
 
-         #endregion
+            #endregion
 
-         #region Hiding
-
-         bool isPlayerHidden = false;
-         for (int i = 0; i < folliage.Length; i++)
-         {
-
-            if (player.collidesWithAbove (folliage[i]) || player.collidesWithBelow (folliage[i]))
+            #region Cotton Candy Radius Detection
+            if (cottonCandyBomb.isActive)
             {
-               isPlayerHidden = true;
-            }
-
-            if (isPlayerHidden)
-            {
-               player.spriteColor = Color.Gray;
-            }
-            else
-            {
-               player.spriteColor = Color.White;
-            }
-
-            player.isHidden = isPlayerHidden;
-         }
-
-         #endregion
-
-         #region Game Pause
-
-         if (keyboardState.IsKeyDown (Keys.P))
-         {
-            if (ableToPause)
-            {
-               gameNotPaused = !(gameNotPaused);
-
-               if (gameNotPaused == true)
+               for (int i = 0; i < guards.Length; i++)
                {
-                  pauseScreen.Visible = false;
-                  IsMouseVisible = false;
+                  if (cottonCandyBomb.isWithinDetectionRadius (guards[i]))
+                  {
+                     guards[i].detectionRadius = (guards[i].detectionRadius / 2);
+                  }
+               }
+            }
+
+            #endregion
+
+            #region Hiding
+
+            bool isPlayerHidden = false;
+            for (int i = 0; i < folliage.Length; i++)
+            {
+
+               if (player.collidesWithAbove (folliage[i]) || player.collidesWithBelow (folliage[i]))
+               {
+                  isPlayerHidden = true;
+               }
+
+               if (isPlayerHidden)
+               {
+                  player.spriteColor = Color.Gray;
                }
                else
                {
-                  pauseScreen.spritePosition = player.spritePosition;
-                  pauseScreen.Visible = true;
-                  IsMouseVisible = true;
+                  player.spriteColor = Color.White;
                }
 
-               ableToPause = false;
-               pauseTimer = 15;
+               player.isHidden = isPlayerHidden;
             }
-         }
 
-         if (!ableToPause && pauseTimer > 0)
-         {
-            pauseTimer--;
-         }
+            #endregion
 
-         if (pauseTimer < 1 && !ableToPause)
-         {
-            ableToPause = true;
-         }
+            #region Game Pause
 
-         #endregion
-
-         #region Guard Spawning
-
-         if (player.candyCount == 5)
-         {
-            if (guards[1].followPath == null)
+            if (keyboardState.IsKeyDown (Keys.P))
             {
-               Vector2[] guard2Path = new Vector2[4];
+               if (ableToPause)
+               {
+                  gameNotPaused = !(gameNotPaused);
 
-               guard2Path[0] = new Vector2 (200, 300);
-               guard2Path[1] = new Vector2 (1500, 300);
-               guard2Path[2] = new Vector2 (1500, 500);
-               guard2Path[3] = new Vector2 (200, 500);
+                  if (gameNotPaused == true)
+                  {
+                     pauseScreen.Visible = false;
+                     IsMouseVisible = false;
+                  }
+                  else
+                  {
+                     pauseScreen.spritePosition = player.spritePosition;
+                     pauseScreen.Visible = true;
+                     IsMouseVisible = true;
+                  }
 
-               guards[1].followPath = guard2Path;
-
-               guards[1].setTempDestination (guardEnterPoint, false);
+                  ableToPause = false;
+                  pauseTimer = 15;
+               }
             }
-         }
 
-         if (player.candyCount == 15)
-         {
-            if (guards[2].followPath == null)
+            if (!ableToPause && pauseTimer > 0)
             {
-               Vector2[] guard3Path = new Vector2[4];
-               guard3Path[0] = new Vector2 (200, 600);
-               guard3Path[1] = new Vector2 (1500, 600);
-               guard3Path[2] = new Vector2 (1500, 850);
-               guard3Path[3] = new Vector2 (200, 850);
-
-               guards[2].followPath = guard3Path;
-
-               guards[2].setTempDestination (guardEnterPoint, false);
+               pauseTimer--;
             }
-         }
 
-         if (player.candyCount == 25)
-         {
-            if (guards[3].followPath == null)
+            if (pauseTimer < 1 && !ableToPause)
             {
-               Vector2[] guard4Path = new Vector2[4];
-               guard4Path[0] = new Vector2 (1700, 300);
-               guard4Path[1] = new Vector2 (2800, 300);
-               guard4Path[2] = new Vector2 (2800, 450);
-               guard4Path[3] = new Vector2 (1700, 450);
-
-               guards[3].followPath = guard4Path;
-
-               guards[3].setTempDestination (guardEnterPoint, false);
+               ableToPause = true;
             }
-         }
 
-         if (player.candyCount == 40)
-         {
-            if (guards[4].followPath == null)
+            #endregion
+
+            #region Instruction Screen
+
+            if (keyboardState.IsKeyDown (Keys.I))
             {
-               Vector2[] guard5Path = new Vector2[4];
-               guard5Path[0] = new Vector2 (1950, 550);
-               guard5Path[1] = new Vector2 (2800, 550);
-               guard5Path[2] = new Vector2 (2800, 800);
-               guard5Path[3] = new Vector2 (1950, 800);
+               if (ableToInstruct)
+               {
+                  gameNotPaused = !(gameNotPaused);
 
-               guards[4].followPath = guard5Path;
+                  if (gameNotPaused == true)
+                  {
+                     instructionScreen.Visible = false;
+                     IsMouseVisible = false;
+                  }
+                  else
+                  {
+                     instructionScreen.spritePosition = player.spritePosition;
+                     instructionScreen.Visible = true;
+                  }
 
-               guards[4].setTempDestination (guardEnterPoint, false);
+                  ableToInstruct = false;
+                  instructionTimer = 15;
+               }
+            }
+
+            if (!ableToPause && pauseTimer > 0)
+            {
+               instructionTimer--;
+            }
+
+            if (instructionTimer < 1 && !ableToInstruct)
+            {
+               ableToInstruct = true;
+            }
+
+            #endregion
+
+            #region Guard Spawning
+
+            if (player.candyCount == 5)
+            {
+               if (guards[1].followPath == null)
+               {
+                  Vector2[] guard2Path = new Vector2[4];
+
+                  guard2Path[0] = new Vector2 (200, 300);
+                  guard2Path[1] = new Vector2 (1500, 300);
+                  guard2Path[2] = new Vector2 (1500, 500);
+                  guard2Path[3] = new Vector2 (200, 500);
+
+                  guards[1].followPath = guard2Path;
+
+                  guards[1].setTempDestination (guardEnterPoint, false);
+               }
+            }
+
+            if (player.candyCount == 15)
+            {
+               if (guards[2].followPath == null)
+               {
+                  Vector2[] guard3Path = new Vector2[4];
+                  guard3Path[0] = new Vector2 (200, 600);
+                  guard3Path[1] = new Vector2 (1500, 600);
+                  guard3Path[2] = new Vector2 (1500, 850);
+                  guard3Path[3] = new Vector2 (200, 850);
+
+                  guards[2].followPath = guard3Path;
+
+                  guards[2].setTempDestination (guardEnterPoint, false);
+               }
+            }
+
+            if (player.candyCount == 25)
+            {
+               if (guards[3].followPath == null)
+               {
+                  Vector2[] guard4Path = new Vector2[4];
+                  guard4Path[0] = new Vector2 (1700, 300);
+                  guard4Path[1] = new Vector2 (2800, 300);
+                  guard4Path[2] = new Vector2 (2800, 450);
+                  guard4Path[3] = new Vector2 (1700, 450);
+
+                  guards[3].followPath = guard4Path;
+
+                  guards[3].setTempDestination (guardEnterPoint, false);
+               }
+            }
+
+            if (player.candyCount == 40)
+            {
+               if (guards[4].followPath == null)
+               {
+                  Vector2[] guard5Path = new Vector2[4];
+                  guard5Path[0] = new Vector2 (1950, 550);
+                  guard5Path[1] = new Vector2 (2800, 550);
+                  guard5Path[2] = new Vector2 (2800, 800);
+                  guard5Path[3] = new Vector2 (1950, 800);
+
+                  guards[4].followPath = guard5Path;
+
+                  guards[4].setTempDestination (guardEnterPoint, false);
+               }
+            }
+
+            #endregion
+
+            #region Mothers Leaving
+
+            if (player.candyCount == 10)
+            {
+               mothers[1].setTempPath (momExitPath, true);
+            }
+
+            if (player.candyCount == 20)
+            {
+               mothers[2].setTempPath (momExitPath, true);
+            }
+
+            if (player.candyCount == 30)
+            {
+               mothers[3].setTempPath (momExitPath, true);
+            }
+
+            if (player.candyCount == 35)
+            {
+               mothers[4].setTempPath (momExitPath, true);
+            }
+
+            #endregion
+         }
+         #region Game Exit Timer
+         else
+         {
+            gameOverTimer++;
+            if (gameOverTimer > 200)
+            {
+               this.Exit ();
             }
          }
-
-         #endregion
-
-         #region Mothers Leaving
-
-         if (player.candyCount == 10)
-         {
-            mothers[1].setTempPath (momExitPath, true);
-         }
-
-         if (player.candyCount == 20)
-         {
-            mothers[2].setTempPath (momExitPath, true);
-         }
-
-         if (player.candyCount ==30)
-         {
-            mothers[3].setTempPath (momExitPath, true);
-         }
-
-         if (player.candyCount == 35)
-         {
-            mothers[4].setTempPath (momExitPath, true);
-         }
-
          #endregion
 
          base.Update(gameTime);
