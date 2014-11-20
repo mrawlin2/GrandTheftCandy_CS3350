@@ -210,3 +210,7 @@ C:\Users\Amber\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandThef
 C:\Users\Amber\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\winnerShop.xnb
 C:\Users\Amber\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\instructions.xnb
 C:\Users\Amber\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\titleScreen2.xnb
+C:\Users\Amber\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\GrandTheftCandy.exe.manifest
+C:\Users\Amber\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\GrandTheftCandy.application
+C:\Users\Amber\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\GrandTheftCandy.exe.manifest
+C:\Users\Amber\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\GrandTheftCandy.application
