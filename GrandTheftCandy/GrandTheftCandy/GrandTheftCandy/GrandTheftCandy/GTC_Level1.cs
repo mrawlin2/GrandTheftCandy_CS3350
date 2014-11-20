@@ -129,9 +129,10 @@ namespace GrandTheftCandy
 
          #endregion
 
-         Song backgroundSound = Content.Load<Song> (@"Resources\Sounds\gameMusic");
-         MediaPlayer.Play (backgroundSound);
-         MediaPlayer.Volume = 50;
+         Song backgroundSound = Content.Load<Song>(@"Resources\Sounds\gameMusic");
+         MediaPlayer.Play(backgroundSound);
+         MediaPlayer.Volume = .2f;
+         MediaPlayer.IsRepeating = true;
 
          gameNotPaused = false;
 
@@ -197,7 +198,7 @@ namespace GrandTheftCandy
                player.candyCount++;
                for (int c = 0; c < guards.Length; c++)
                {
-                  guards[c].detectionRadius = 50 * player.candyCount;
+                  guards[c].detectionRadius += 50;
                }
             }
          }
@@ -270,11 +271,13 @@ namespace GrandTheftCandy
                if (gameNotPaused == true)
                {
                   pauseScreen.Visible = false;
+                  IsMouseVisible = false;
                }
                else
                {
                   pauseScreen.spritePosition = player.spritePosition;
                   pauseScreen.Visible = true;
+                  IsMouseVisible = true;
                }
 
                ableToPause = false;
@@ -334,42 +337,57 @@ namespace GrandTheftCandy
             @"Resources\Images\stroller2", @"Resources\Images\momSpriteRight",
             @"Resources\Images\stroller2", @"Resources\Images\momSpriteRight"};
          mothers[0] = new NPC_Mother_Class (this, MotherSprites, MotherSpritesAlternate, MotherSpriteAnimation, MotherSpriteAnimation,
-            new Vector2 (250, 600), new Vector2 (3f ,3f), Color.White, true, "Mother0", 500, 2);
+            new Vector2 (100, 300), new Vector2 (3f ,3f), Color.White, true, "Mother0", 500, 2);
          mothers[1] = new NPC_Mother_Class (this, MotherSprites, MotherSpritesAlternate, MotherSpriteAnimation, MotherSpriteAnimation,
-            new Vector2 (1500, 800), new Vector2 (3f, 3f), Color.White, true, "Mother1", 300, 2);
+            new Vector2 (1500, 600), new Vector2 (3f, 3f), Color.White, true, "Mother1", 300, 2);
          mothers[2] = new NPC_Mother_Class (this, MotherSprites, MotherSpritesAlternate, MotherSpriteAnimation, MotherSpriteAnimation,
             new Vector2 (2250, 400), new Vector2 (3f, 3f), Color.White, true, "Mother2", 250, 2);
          mothers[3] = new NPC_Mother_Class (this, MotherSprites, MotherSpritesAlternate, MotherSpriteAnimation, MotherSpriteAnimation,
-            new Vector2 (2500, 750), new Vector2 (3f, 3f), Color.White, true, "Mother3", 450, 2);
+            new Vector2 (2800, 600), new Vector2 (3f, 3f), Color.White, true, "Mother3", 450, 2);
          mothers[4] = new NPC_Mother_Class (this, MotherSprites, MotherSpritesAlternate, MotherSpriteAnimation, MotherSpriteAnimation,
-            new Vector2 (1000, 300), new Vector2 (3f, 3f), Color.White, true, "Mother4", 325, 2);
+            new Vector2 (750, 900), new Vector2 (3f, 3f), Color.White, true, "Mother4", 325, 2);
 
          #region Set Mothers Follow Paths
 
-         Vector2[] mom1Path = new Vector2[2];
-         mom1Path[0] = new Vector2 (100, 600);
-         mom1Path[1] = new Vector2 (550, 600);
+         Vector2[] mom1Path = new Vector2[4];
+         mom1Path[0] = new Vector2 (100, 300);
+         mom1Path[1] = new Vector2 (100, 900);
+         mom1Path[2] = new Vector2(2900, 900);
+         mom1Path[3] = new Vector2(2900, 300);
+
+         Vector2[] mom2Path = new Vector2[2];
+         mom2Path[0] = new Vector2 (100, 600);
+         mom2Path[1] = new Vector2 (1500, 600);
+
+         Vector2[] mom3Path = new Vector2[3];
+         mom3Path[0] = new Vector2 (1500, 300);
+         mom3Path[1] = new Vector2 (2500, 300);
+         mom3Path[2] = new Vector2 (2150, 600);
+
+         Vector2[] mom4Path = new Vector2[2];
+         mom4Path[0] = new Vector2(2800, 300);
+         mom4Path[1] = new Vector2(2800, 900);
+
+
+         Vector2[] mom5Path = new Vector2[4];
+         mom5Path[0] = new Vector2(750, 900);
+         mom5Path[1] = new Vector2(1500, 750);
+         mom5Path[2] = new Vector2(2250, 900);
+         mom5Path[3] = new Vector2(1500, 750);
 
          Vector2[] momExitPath = new Vector2[2];
          momExitPath[0] = new Vector2 (370, 260);
          momExitPath[1] = new Vector2 (370, 0);
 
-         Vector2[] mom2Path = new Vector2[3];
-         mom2Path[0] = new Vector2 (1000, 800);
-         mom2Path[1] = new Vector2 (1500, 600);
-         mom2Path[2] = new Vector2 (1250, 800);
-
-         Vector2[] mom3Path = new Vector2[3];
-         mom3Path[0] = new Vector2 (1500, 600);
-         mom3Path[1] = new Vector2 (2250, 400);
-         mom3Path[2] = new Vector2 (2500, 600);
-
-         mothers[0].moveable = mothers[1].moveable = mothers[2].moveable = true;
+         mothers[0].moveable = mothers[1].moveable =
+         mothers[2].moveable = mothers[3].moveable =
+         mothers[4].moveable = true;
 
          mothers[0].followPath = mom1Path;
          mothers[1].followPath = mom2Path;
          mothers[2].followPath = mom3Path;
-
+         mothers[3].followPath = mom4Path;
+         mothers[4].followPath = mom5Path;
          // Test of the mothers exit path.
          //mothers[0].setTempPath (momExitPath, false);
 
@@ -388,14 +406,14 @@ namespace GrandTheftCandy
          guards[1] = new NPC_Guard_Class (this, GuardSprite, guardAnimations, new Vector2 (2000, 500), new Vector2 (4f, 4f),
             Color.White, true, "Guard1", 0, 2);
 
-         #region Set Guard behavior
+         #region Set Guard Paths
 
          // Create a path of four waypoints for the guard to follow.
          Vector2[] guard1Path = new Vector2[4];
-         guard1Path[0] = new Vector2 (300, 300);
-         guard1Path[1] = new Vector2 (300, 550);
-         guard1Path[2] = new Vector2 (750, 600);
-         guard1Path[3] = new Vector2 (1500, 400);
+         guard1Path[0] = new Vector2 (900, 350);
+         guard1Path[1] = new Vector2 (900, 850);
+         guard1Path[2] = new Vector2 (2100, 850);
+         guard1Path[3] = new Vector2 (2100, 350);
 
          Vector2[] guard2Path = new Vector2[4];
          guard2Path[0] = new Vector2 (1500, 300);
