@@ -135,7 +135,7 @@ namespace GrandTheftCandy
          pauseScreen = new Sprite_Base_Class(this, @"Resources\Images\pauseTransparency", screenCenter, false, 1000, "Pause Screen");
          pauseScreen.Visible = false;
 
-         instructionScreen = new Sprite_Base_Class (this, @"Resources\Images\pauseTransparency", screenCenter, false, 1000, "Instruction Screen");
+         instructionScreen = new Sprite_Base_Class (this, @"Resources\Images\instructions", screenCenter, false, 1000, "Instruction Screen");
          instructionScreen.Visible = false;
 
          cottonCandyBomb = new Cotton_Candy_Bomb (this, @"Resources\Images\cottoncandy", screenCenter, 250, "Cotton Candy");
@@ -288,7 +288,7 @@ namespace GrandTheftCandy
 
             if (keyboardState.IsKeyDown (Keys.P))
             {
-               if (ableToPause)
+               if (ableToPause && instructionScreen.Visible == false)
                {
                   gameNotPaused = !(gameNotPaused);
 
@@ -327,25 +327,25 @@ namespace GrandTheftCandy
             {
                if (ableToInstruct)
                {
-                  gameNotPaused = !(gameNotPaused);
-
-                  if (gameNotPaused == true)
+                  if (instructionScreen.Visible == true)
                   {
                      instructionScreen.Visible = false;
-                     IsMouseVisible = false;
+                     gameNotPaused = true;
+                     ableToInstruct = false;
+                     instructionTimer = 15;
                   }
                   else
                   {
+                     ableToInstruct = false;
+                     gameNotPaused = false;
                      instructionScreen.spritePosition = player.spritePosition;
                      instructionScreen.Visible = true;
+                     instructionTimer = 15;
                   }
-
-                  ableToInstruct = false;
-                  instructionTimer = 15;
                }
             }
 
-            if (!ableToPause && pauseTimer > 0)
+            if (instructionTimer > 0)
             {
                instructionTimer--;
             }
