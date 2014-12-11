@@ -1027,10 +1027,6 @@ namespace GrandTheftCandy
                            m_StopAtTempDestination = false;
                         }
                      }
-                     else
-                     {
-                        m_CurrentDestination = m_TempFollowPath[m_TempPathIndex];
-                     }
                   }
                }
                #endregion
@@ -1104,24 +1100,6 @@ namespace GrandTheftCandy
          m_TempFollowPath = a_TempFollowPath;
          m_TempPathIndex = 0;
          m_StopAtTempDestination = a_StopAtTempDestination;
-      }
-
-      /// <summary>
-      /// Returns if the NPC's temp path is null.
-      /// </summary>
-      /// <returns></returns>
-      public bool isTempPathNull ()
-      {
-         return m_TempFollowPath == null;
-      }
-
-      /// <summary>
-      /// Returns is the normal follow path is null.
-      /// </summary>
-      /// <returns></returns>
-      public bool isFollowPathNull ()
-      {
-         return m_FollowPath == null;
       }
 
       #endregion

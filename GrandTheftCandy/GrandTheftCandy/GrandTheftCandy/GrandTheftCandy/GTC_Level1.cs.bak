@@ -359,7 +359,7 @@ namespace GrandTheftCandy
 
             #region Guard Spawning
 
-            if (player.candyCount == 5 && guards[1].isFollowPathNull())
+            if (player.candyCount == 5)
             {
                if (guards[1].followPath == null)
                {
@@ -376,7 +376,7 @@ namespace GrandTheftCandy
                }
             }
 
-            if (player.candyCount == 15 && guards[2].isFollowPathNull ())
+            if (player.candyCount == 15)
             {
                if (guards[2].followPath == null)
                {
@@ -392,7 +392,7 @@ namespace GrandTheftCandy
                }
             }
 
-            if (player.candyCount == 25 && guards[3].isFollowPathNull ())
+            if (player.candyCount == 25)
             {
                if (guards[3].followPath == null)
                {
@@ -408,7 +408,7 @@ namespace GrandTheftCandy
                }
             }
 
-            if (player.candyCount == 40 && guards[4].isFollowPathNull ())
+            if (player.candyCount == 40)
             {
                if (guards[4].followPath == null)
                {
@@ -428,22 +428,22 @@ namespace GrandTheftCandy
 
             #region Mothers Leaving
 
-            if (player.candyCount == 10 && mothers[1].isTempPathNull())
+            if (player.candyCount == 10)
             {
                mothers[1].setTempPath (momExitPath, true);
             }
 
-            if (player.candyCount == 20 && mothers[2].isTempPathNull ())
+            if (player.candyCount == 20)
             {
                mothers[2].setTempPath (momExitPath, true);
             }
 
-            if (player.candyCount == 30 && mothers[3].isTempPathNull ())
+            if (player.candyCount == 30)
             {
                mothers[3].setTempPath (momExitPath, true);
             }
 
-            if (player.candyCount == 35 && mothers[4].isTempPathNull ())
+            if (player.candyCount == 35)
             {
                mothers[4].setTempPath (momExitPath, true);
             }
