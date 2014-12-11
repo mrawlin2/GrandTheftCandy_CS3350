@@ -47,13 +47,13 @@ namespace GrandTheftCandy
       GraphicsDeviceManager graphics;
       public SpriteBatch spriteBatch;
       public Matrix cameraPosition;
-      public bool gameNotPaused;
       private bool ableToPause;
       private bool ableToInstruct;
-      private bool gameOverBool;
       private int pauseTimer;
       private int instructionTimer;
       private int gameOverTimer;
+      public GameStates currentGameState;
+      public GameStates previousGameState;
 
       public Player_Controlled_Sprite player;
       NPC_Mother_Class[] mothers;
@@ -83,19 +83,18 @@ namespace GrandTheftCandy
          graphics = new GraphicsDeviceManager(this);
          graphics.PreferredBackBufferWidth = 800;
          graphics.PreferredBackBufferHeight = 600;
-         this.IsMouseVisible = true;
          Content.RootDirectory = "Content";
          cameraPosition = Matrix.CreateTranslation(new Vector3(0, 0, 1));
          mothers = new NPC_Mother_Class[5];
          guards = new NPC_Guard_Class[5];
          folliage = new Sprite_Base_Class[8];
-         gameNotPaused = true;
          ableToInstruct = true;
          ableToPause = true;
-         gameOverBool = false;
          instructionTimer = 0;
          pauseTimer = 0;
          gameOverTimer = 0;
+         currentGameState = GameStates.MainMenu;
+         previousGameState = GameStates.MainMenu;
       }
 
       #endregion
@@ -154,8 +153,6 @@ namespace GrandTheftCandy
 
          guardEnterPoint = new Vector2 (1500, 300);
 
-         gameNotPaused = false;
-
          base.Initialize();
         }
 
@@ -196,7 +193,7 @@ namespace GrandTheftCandy
 
          #endregion
 
-         if (!gameOverBool)
+         if (currentGameState != GameStates.Lose && currentGameState != GameStates.Win)
          {
             #region Win Condition
 
@@ -205,7 +202,7 @@ namespace GrandTheftCandy
                winScreen.Visible = true;
                player.movementAllowed = false;
                cameraPosition = Matrix.CreateTranslation (Vector3.Zero);
-               gameOverBool = true;
+               currentGameState = GameStates.Win;
             }
 
             #endregion
@@ -239,7 +236,7 @@ namespace GrandTheftCandy
                   cameraPosition = Matrix.CreateTranslation (Vector3.Zero);
                   player.movementAllowed = false;
                   gameOver.Visible = true;
-                  gameOverBool = true;
+                  currentGameState = GameStates.Lose;
                }
             }
 
@@ -288,21 +285,22 @@ namespace GrandTheftCandy
 
             if (keyboardState.IsKeyDown (Keys.P))
             {
-               if (ableToPause && instructionScreen.Visible == false)
+               if (ableToPause && currentGameState != GameStates.PauseMenu)
                {
-                  gameNotPaused = !(gameNotPaused);
+                  previousGameState = currentGameState;
+                  currentGameState = GameStates.PauseMenu;
 
-                  if (gameNotPaused == true)
-                  {
-                     pauseScreen.Visible = false;
-                     IsMouseVisible = false;
-                  }
-                  else
-                  {
-                     pauseScreen.spritePosition = player.spritePosition;
-                     pauseScreen.Visible = true;
-                     IsMouseVisible = true;
-                  }
+                  pauseScreen.spritePosition = new Vector2 ((-cameraPosition.Translation.X) + 400, (-cameraPosition.Translation.Y) + 300);
+                  pauseScreen.Visible = true;
+
+                  ableToPause = false;
+                  pauseTimer = 15;
+               }
+               else if (ableToPause && currentGameState == GameStates.PauseMenu)
+               {
+                  pauseScreen.Visible = false;
+                  currentGameState = previousGameState;
+                  previousGameState = GameStates.Play;
 
                   ableToPause = false;
                   pauseTimer = 15;
@@ -325,24 +323,32 @@ namespace GrandTheftCandy
 
             if (keyboardState.IsKeyDown (Keys.I))
             {
-               if (ableToInstruct)
+               if (ableToInstruct && currentGameState != GameStates.HelpMenu)
                {
-                  if (instructionScreen.Visible == true)
-                  {
-                     instructionScreen.Visible = false;
-                     gameNotPaused = true;
-                     ableToInstruct = false;
-                     instructionTimer = 15;
-                  }
-                  else
-                  {
-                     ableToInstruct = false;
-                     gameNotPaused = false;
-                     instructionScreen.spritePosition = player.spritePosition;
-                     instructionScreen.Visible = true;
-                     instructionTimer = 15;
-                  }
+                  previousGameState = currentGameState;
+                  currentGameState = GameStates.HelpMenu;
+
+                  instructionScreen.spritePosition = new Vector2 ((-cameraPosition.Translation.X) + 400, (-cameraPosition.Translation.Y) + 300);
+                  instructionScreen.Visible = true;
+
+                  ableToInstruct = false;
+                  instructionTimer = 15;
                }
+               else if (ableToInstruct && currentGameState == GameStates.HelpMenu)
+               {
+                  instructionScreen.Visible = false;
+                  currentGameState = previousGameState;
+                  previousGameState = GameStates.Play;
+
+                  ableToInstruct = false;
+                  instructionTimer = 15;
+               }
+            }
+
+            if (!instructionScreen.Visible && currentGameState == GameStates.HelpMenu)
+            {
+               instructionScreen.spritePosition = new Vector2 ((-cameraPosition.Translation.X) + 400, (-cameraPosition.Translation.Y) + 300);
+               instructionScreen.Visible = true;
             }
 
             if (instructionTimer > 0)
@@ -454,7 +460,7 @@ namespace GrandTheftCandy
          else
          {
             gameOverTimer++;
-            if (gameOverTimer > 200)
+            if (gameOverTimer > 150)
             {
                this.Exit ();
             }

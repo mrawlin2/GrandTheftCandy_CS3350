@@ -20,7 +20,6 @@ namespace GrandTheftCandy
    public enum spriteAnimationSequence
    {DownStill, DownMoving, LeftStill, LeftMoving, RightStill, RightMoving, UpStill, UpMoving};
 
-   // TODO: Add ability to to more or less collision detection based on an int.
    public class Sprite_Base_Class : DrawableGameComponent
    {
       #region Member Variables
@@ -221,7 +220,7 @@ namespace GrandTheftCandy
 
       public override void Update(GameTime gameTime)
       {
-         if (((GTC_Level1)this.Game).gameNotPaused)
+         if (((GTC_Level1)this.Game).currentGameState == GameStates.Play)
          {
             base.Update (gameTime);
          }
@@ -476,7 +475,7 @@ namespace GrandTheftCandy
 
       public override void Update (GameTime gameTime)
       {
-         if (((GTC_Level1)this.Game).gameNotPaused)
+         if (((GTC_Level1)this.Game).currentGameState == GameStates.Play)
          {
             #region Sprite Sequence Update
 
@@ -519,7 +518,7 @@ namespace GrandTheftCandy
             1.0f, SpriteEffects.None, 0f);
          sb.End ();
 
-         if (((GTC_Level1)this.Game).gameNotPaused)
+         if (((GTC_Level1)this.Game).currentGameState == GameStates.Play)
          {
             if (m_DrawThisFrame)
             {
@@ -696,7 +695,7 @@ namespace GrandTheftCandy
 
       public override void Update(GameTime gameTime)
       {
-         if (((GTC_Level1)this.Game).gameNotPaused)
+         if (((GTC_Level1)this.Game).currentGameState == GameStates.Play)
          {
             if (m_MovementAllowed)
             {
@@ -719,7 +718,7 @@ namespace GrandTheftCandy
                #region Move Left
                if (keyboardInput.IsKeyDown (Keys.A) || keyboardInput.IsKeyDown (Keys.Left))
                {
-                  if (m_spritePosition.X - (this.boundingBox.Width / 2) > 0)
+                  if (m_spritePosition.X - (this.boundingBox.Width / 4) > 0)
                   {
                      tempMovement.X = -5;
                   }
@@ -729,7 +728,7 @@ namespace GrandTheftCandy
                #region Move Right
                if (keyboardInput.IsKeyDown (Keys.D) || keyboardInput.IsKeyDown (Keys.Right))
                {
-                  if (m_spritePosition.X < 3000)
+                  if (m_spritePosition.X < 2975)
                   {
                      tempMovement.X = 5;
                   }
@@ -945,7 +944,7 @@ namespace GrandTheftCandy
 
       public override void Update (GameTime gameTime)
       {
-         if (((GTC_Level1)this.Game).gameNotPaused)
+         if (((GTC_Level1)this.Game).currentGameState == GameStates.Play)
          {
             if (m_Moveable)
             {
@@ -1212,7 +1211,7 @@ namespace GrandTheftCandy
 
       public override void Update (GameTime gameTime)
       {
-         if (((GTC_Level1)this.Game).gameNotPaused)
+         if (((GTC_Level1)this.Game).currentGameState == GameStates.Play)
          {
             #region Sprite Switching
             // If the drawn sprites need to switch (there was a recent change)
@@ -1248,11 +1247,14 @@ namespace GrandTheftCandy
          base.Update (gameTime);
       }
 
+      public override void Draw (GameTime gameTime)
+      {
+         base.Draw (gameTime);
+      }
+
       #endregion
 
       #region Functions
-
-
 
       #endregion
    } // End NPC_Mother_Class.
@@ -1323,7 +1325,7 @@ namespace GrandTheftCandy
 
       public override void Update (GameTime gameTime)
       {
-         if (((GTC_Level1)this.Game).gameNotPaused)
+         if (((GTC_Level1)this.Game).currentGameState == GameStates.Play)
          {
             Vector2 distanceToPlayer = ((GTC_Level1)this.Game).player.playerPosition - this.spritePosition;
             bool isWithinDetectionRadius = distanceToPlayer.Length() < m_DetectionRadius;
@@ -1391,15 +1393,14 @@ namespace GrandTheftCandy
 
       public override void Update(GameTime gameTime)
       {
-         MouseState mouse = Mouse.GetState();
          KeyboardState keyboard = Keyboard.GetState ();
 
-         if ((mouse.LeftButton == ButtonState.Pressed) || (keyboard.IsKeyDown(Keys.Enter)))
+         if (keyboard.IsKeyDown(Keys.Enter))
          {
             this.Visible = false;
             this.DrawOrder = 100;
-            this.Game.IsMouseVisible = false;
-            ((GTC_Level1)this.Game).gameNotPaused = true;
+            ((GTC_Level1)this.Game).currentGameState = GameStates.HelpMenu;
+            ((GTC_Level1)this.Game).previousGameState = GameStates.Play;
             ((Player_Controlled_Sprite)((GTC_Level1)this.Game).Components[0]).movementAllowed = true;
             ((GTC_Level1)this.Game).gameBar.Visible = true;
          }
@@ -1555,7 +1556,7 @@ namespace GrandTheftCandy
 
       public override void Update (GameTime gameTime)
       {
-         if (((GTC_Level1)this.Game).gameNotPaused)
+         if (((GTC_Level1)this.Game).currentGameState == GameStates.Play)
          {
             base.Update (gameTime);
 
@@ -1609,7 +1610,6 @@ namespace GrandTheftCandy
 
       public override void Draw (GameTime gameTime)
       {
-
          if (this.Visible)
          {
             SpriteBatch sb = ((GTC_Level1)this.Game).spriteBatch;
@@ -1619,17 +1619,20 @@ namespace GrandTheftCandy
                1.0f, SpriteEffects.None, 0f);
             sb.End ();
 
-            if (m_UpdateThisFrame)
+            if (((GTC_Level1)this.Game).currentGameState == GameStates.Play)
             {
-               m_CurrentDrawSequence++;
-               if (m_CurrentDrawSequence < 6)
+               if (m_UpdateThisFrame)
                {
-                  m_DrawRectangle.Offset (m_SpriteWidth, 0);
-               }
-               else
-               {
-                  m_CurrentDrawSequence = 0;
-                  m_DrawRectangle.X = 0;
+                  m_CurrentDrawSequence++;
+                  if (m_CurrentDrawSequence < 6)
+                  {
+                     m_DrawRectangle.Offset (m_SpriteWidth, 0);
+                  }
+                  else
+                  {
+                     m_CurrentDrawSequence = 0;
+                     m_DrawRectangle.X = 0;
+                  }
                }
             }
 
