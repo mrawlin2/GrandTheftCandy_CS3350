@@ -484,6 +484,16 @@ namespace GrandTheftCandy
             gameOverTimer++;
             if (gameOverTimer > 150)
             {
+               if (gameOver.Visible)
+               {
+                  gameOver.Visible = false;
+               }
+
+               if (winScreen.Visible)
+               {
+                  winScreen.Visible = false;
+               }
+
                this.resetGame ();
             }
          }
@@ -649,15 +659,13 @@ namespace GrandTheftCandy
 
          for (int i = 1; i < guards.Length; i++)
          {
-            guards[i].spritePosition = new Vector2 (1500, 50);
-            guards[i].moveable = false;
+            guards[i].resetNPC (false);
          }
 
-         mothers[0].spritePosition = new Vector2 (100, 300);
-         mothers[1].spritePosition = new Vector2 (1500, 600);
-         mothers[2].spritePosition = new Vector2 (2250, 400);
-         mothers[3].spritePosition = new Vector2 (2800, 600);
-         mothers[4].spritePosition = new Vector2 (750, 900);
+         for (int i = 0; i < mothers.Length; i++)
+         {
+            mothers[i].resetNPC (true);
+         }
       }
 
       #endregion

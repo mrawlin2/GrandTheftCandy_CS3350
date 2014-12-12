@@ -863,6 +863,7 @@ namespace GrandTheftCandy
       private int m_TempPathIndex;
       private Vector2 m_CurrentDestination;
       private Vector2 m_TemporaryDestination;
+      private Vector2 m_StartingPosition;
       protected Vector2 m_CurrentMovementSpeed;
       private Vector2[] m_FollowPath;
       private Vector2[] m_TempFollowPath;
@@ -879,6 +880,7 @@ namespace GrandTheftCandy
          m_StopAtTempDestination = false;
          m_CurrentMovementSpeed = a_MovementSpeed;
          m_PathIndex = 0;
+         m_StartingPosition = a_startingPosition;
          m_FollowPath = null;
          m_TempFollowPath = null;
       }
@@ -1121,6 +1123,28 @@ namespace GrandTheftCandy
       public bool isFollowPathNull ()
       {
          return m_FollowPath == null;
+      }
+
+      public void resetNPC (bool a_Moveable)
+      {
+         this.m_spritePosition = m_StartingPosition;
+         m_Moveable = a_Moveable;
+
+         if (m_FollowPath != null)
+         {
+            m_PathIndex = 0;
+         }
+
+         if (m_TempFollowPath != null)
+         {
+            m_TempFollowPath = null;
+            m_TempPathIndex = 0;
+         }
+
+         if (m_TemporaryDestination != null)
+         {
+            m_TemporaryDestination = Vector2.Zero;
+         }
       }
 
       #endregion
