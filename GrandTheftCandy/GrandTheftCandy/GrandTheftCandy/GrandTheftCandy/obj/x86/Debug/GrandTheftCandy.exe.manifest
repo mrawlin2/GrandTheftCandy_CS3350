@@ -93,14 +93,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GrandTheftCandy.exe" size="35840">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GrandTheftCandy.exe" size="36352">
       <assemblyIdentity name="GrandTheftCandy" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>wY4Dq83yxIj6ribyB7T5jZSsrpo=</dsig:DigestValue>
+        <dsig:DigestValue>mchYHfp1EPaS/P0Nz2KRyLR93NA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -67,6 +67,7 @@ namespace GrandTheftCandy
       Sprite_Base_Class mallFloor;
       Sprite_Base_Class mallWall;
       Cotton_Candy_Bomb cottonCandyBomb;
+      Splash_Screen splashScreen;
       public Game_Bar gameBar;
 
       Vector2 screenCenter;
@@ -123,7 +124,9 @@ namespace GrandTheftCandy
          candyEntrance.Visible = false;
          gameBar.Visible = false;
 
-         Splash_Screen splashScreen = new Splash_Screen(this, @"Resources\Images\titleScreen2", screenCenter, Color.White, "Splash Screen");
+         splashScreen = new Splash_Screen(this, @"Resources\Images\titleScreen2", screenCenter, Color.White, "Splash Screen");
+         splashScreen.Visible = true;
+         splashScreen.DrawOrder = 1000;
 
          gameOver = new Sprite_Base_Class(this, @"Resources\Images\gameover", screenCenter, false, 500, "Game Over 1");
          gameOver.Visible = false;
@@ -363,6 +366,25 @@ namespace GrandTheftCandy
 
             #endregion
 
+            #region Reset Catches
+
+            if (currentGameState == GameStates.Play && winScreen.Visible)
+            {
+               winScreen.Visible = false;
+            }
+
+            if (currentGameState == GameStates.Play && gameOver.Visible)
+            {
+               gameOver.Visible = false;
+            }
+
+            if (currentGameState == GameStates.MainMenu && !splashScreen.Visible)
+            {
+               splashScreen.Visible = true;
+            }
+
+            #endregion
+
             #region Guard Spawning
 
             if (player.candyCount == 5 && guards[1].isFollowPathNull())
@@ -462,7 +484,7 @@ namespace GrandTheftCandy
             gameOverTimer++;
             if (gameOverTimer > 150)
             {
-               this.Exit ();
+               this.resetGame ();
             }
          }
          #endregion
@@ -607,6 +629,35 @@ namespace GrandTheftCandy
          folliage[5] = new Sprite_Base_Class (this, @"Resources\Images\kiosk0", new Vector2 (1750, 650), Color.White, true, "kiosk1", 1);
          folliage[6] = new Sprite_Base_Class (this, @"Resources\Images\hidingTree", new Vector2 (1000, 800), Color.White, true, "Tree2", 2);
          folliage[7] = new Sprite_Base_Class (this, @"Resources\Images\hidingTree", new Vector2 (2250, 700), Color.White, true, "Tree3", 2);
+      }
+
+      public void resetGame ()
+      {
+         currentGameState = GameStates.MainMenu;
+         currentGameState = GameStates.MainMenu;
+
+         cameraPosition = Matrix.CreateTranslation (new Vector3 (0, 0, 1));
+         ableToInstruct = true;
+         ableToPause = true;
+         instructionTimer = 0;
+         pauseTimer = 0;
+         gameOverTimer = 0;
+
+         player.spritePosition = screenCenter;
+         player.movementAllowed = false;
+         player.candyCount = 0;
+
+         for (int i = 1; i < guards.Length; i++)
+         {
+            guards[i].spritePosition = new Vector2 (1500, 50);
+            guards[i].moveable = false;
+         }
+
+         mothers[0].spritePosition = new Vector2 (100, 300);
+         mothers[1].spritePosition = new Vector2 (1500, 600);
+         mothers[2].spritePosition = new Vector2 (2250, 400);
+         mothers[3].spritePosition = new Vector2 (2800, 600);
+         mothers[4].spritePosition = new Vector2 (750, 900);
       }
 
       #endregion

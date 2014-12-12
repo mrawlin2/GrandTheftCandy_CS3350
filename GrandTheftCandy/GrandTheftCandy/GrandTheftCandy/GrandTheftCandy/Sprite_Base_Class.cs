@@ -1395,10 +1395,9 @@ namespace GrandTheftCandy
       {
          KeyboardState keyboard = Keyboard.GetState ();
 
-         if (keyboard.IsKeyDown(Keys.Enter))
+         if (keyboard.IsKeyDown(Keys.Enter) && this.Visible)
          {
             this.Visible = false;
-            this.DrawOrder = 100;
             ((GTC_Level1)this.Game).currentGameState = GameStates.HelpMenu;
             ((GTC_Level1)this.Game).previousGameState = GameStates.Play;
             ((Player_Controlled_Sprite)((GTC_Level1)this.Game).Components[0]).movementAllowed = true;
