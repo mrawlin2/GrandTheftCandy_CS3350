@@ -93,14 +93,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GrandTheftCandy.exe" size="36352">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GrandTheftCandy.exe" size="36864">
       <assemblyIdentity name="GrandTheftCandy" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Dd1aD3GNUUwVMSR8jXR+zH+Jj2U=</dsig:DigestValue>
+        <dsig:DigestValue>kpzd6sB7/+IC7Jf0NZYTOzWxE6U=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -236,7 +236,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>azDCo2cb4AlJQPBMg/gIu22Mi6I=</dsig:DigestValue>
+      <dsig:DigestValue>2VPtHBDh3MVvHhrfeAi+s0PHNyM=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Resources\Images\kiosk0.xnb" size="103187">
@@ -480,6 +480,24 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>kV4ObFVUlJT12T4RdmlJCa/ymDM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Resources\Sounds\cottoncandypap.xnb" size="87657">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>IVt5cG9AM3QOr5wEWRrWIB/s3Ic=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Resources\Sounds\crunch.xnb" size="87657">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>RN2DJ16D+WKh4/NfHUx3i0vbbzo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Resources\Sounds\gameMusic.wma" size="6787563">

@@ -214,3 +214,17 @@ C:\Users\Amber\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandThef
 C:\Users\Amber\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\GrandTheftCandy.application
 C:\Users\Amber\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\GrandTheftCandy.exe.manifest
 C:\Users\Amber\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\GrandTheftCandy.application
+C:\Users\Jeff\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\momSpriteLeftStanding.xnb
+C:\Users\Jeff\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\momSpriteLeftStandingCandy.xnb
+C:\Users\Jeff\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\momSpriteRightStanding.xnb
+C:\Users\Jeff\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\momSpriteRightStandingCandy.xnb
+C:\Users\Jeff\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\gameover.xnb
+C:\Users\Jeff\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\winnerShop.xnb
+C:\Users\Jeff\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\instructions.xnb
+C:\Users\Jeff\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Images\titleScreen2.xnb
+C:\Users\Jeff\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\GrandTheftCandy.exe.manifest
+C:\Users\Jeff\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\GrandTheftCandy.application
+C:\Users\Jeff\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\GrandTheftCandy.exe.manifest
+C:\Users\Jeff\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\obj\x86\Debug\GrandTheftCandy.application
+C:\Users\Jeff\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Sounds\cottoncandypap.xnb
+C:\Users\Jeff\Documents\GitHub\GrandTheftCandy_CS3350\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\GrandTheftCandy\bin\x86\Debug\Content\Resources\Sounds\crunch.xnb

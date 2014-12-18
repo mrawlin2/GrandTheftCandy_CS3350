@@ -34,12 +34,14 @@ Content\Resources\Images\momSpriteLeft.xnb
 Content\Resources\Images\momSpriteLeftCandy.xnb
 Content\Resources\Images\momSpriteRight.xnb
 Content\Resources\Images\momSpriteRightCandy.xnb
+Content\SpriteFont1.xnb
 Content\Resources\Images\momSpriteLeftStanding.xnb
 Content\Resources\Images\momSpriteLeftStandingCandy.xnb
 Content\Resources\Images\momSpriteRightStanding.xnb
 Content\Resources\Images\momSpriteRightStandingCandy.xnb
-Content\SpriteFont1.xnb
 Content\Resources\Images\gameover.xnb
 Content\Resources\Images\winnerShop.xnb
 Content\Resources\Images\instructions.xnb
 Content\Resources\Images\titleScreen2.xnb
+Content\Resources\Sounds\cottoncandypap.xnb
+Content\Resources\Sounds\crunch.xnb

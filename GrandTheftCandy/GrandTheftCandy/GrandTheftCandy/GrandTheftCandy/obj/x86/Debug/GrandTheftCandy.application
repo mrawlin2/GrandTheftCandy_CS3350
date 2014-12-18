@@ -8,14 +8,14 @@
     <framework targetVersion="4.0" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="GrandTheftCandy.exe.manifest" size="25125">
+    <dependentAssembly dependencyType="install" codebase="GrandTheftCandy.exe.manifest" size="25925">
       <assemblyIdentity name="GrandTheftCandy.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>z+eUMecPHRK+oQWtR9fp71GVLcs=</dsig:DigestValue>
+        <dsig:DigestValue>3OSeFifISzCCo0ugdoUCzdYS4ro=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

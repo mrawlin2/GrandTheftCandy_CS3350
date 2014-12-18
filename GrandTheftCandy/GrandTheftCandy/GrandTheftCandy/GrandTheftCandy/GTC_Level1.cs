@@ -75,6 +75,8 @@ namespace GrandTheftCandy
       Vector2 guardEnterPoint;
       Vector2[] momExitPath;
 
+      SoundEffect pickUpSFX;
+      SoundEffect cottonCandyBombSFX;
       #endregion
 
       #region Constructors
@@ -96,6 +98,8 @@ namespace GrandTheftCandy
          gameOverTimer = 0;
          currentGameState = GameStates.MainMenu;
          previousGameState = GameStates.MainMenu;
+
+         
       }
 
       #endregion
@@ -146,6 +150,7 @@ namespace GrandTheftCandy
          #endregion
 
          Song backgroundSound = Content.Load<Song>(@"Resources\Sounds\gameMusic");
+         
          MediaPlayer.Play(backgroundSound);
          MediaPlayer.Volume = .2f;
          MediaPlayer.IsRepeating = true;
@@ -155,6 +160,8 @@ namespace GrandTheftCandy
          momExitPath[1] = new Vector2 (370, 0);
 
          guardEnterPoint = new Vector2 (1500, 300);
+         pickUpSFX = Content.Load<SoundEffect>(@"Resources/Sounds/crunch");
+         cottonCandyBombSFX = Content.Load<SoundEffect>(@"Resources/Sounds/cottoncandypap");
 
          base.Initialize();
         }
@@ -167,6 +174,8 @@ namespace GrandTheftCandy
       {
          // Create a new SpriteBatch, which can be used to draw textures.
          spriteBatch = new SpriteBatch(GraphicsDevice);
+
+
       }
 
       /// <summary>
@@ -185,7 +194,7 @@ namespace GrandTheftCandy
       protected override void Update(GameTime gameTime)
       {
          KeyboardState keyboardState = Keyboard.GetState ();
-
+         
          #region Game Exit
 
          if (keyboardState.IsKeyDown (Keys.Escape) ||
@@ -200,7 +209,7 @@ namespace GrandTheftCandy
          {
             #region Win Condition
 
-            if (player.isWithinSpriteBoundry (candyEntrance) && player.candyCount > 49)
+            if (player.isWithinSpriteBoundry (candyEntrance) && player.candyCount > 39)
             {
                winScreen.Visible = true;
                player.movementAllowed = false;
@@ -218,6 +227,7 @@ namespace GrandTheftCandy
                {
                   mothers[i].hasCandy = false;
                   mothers[i].candyRespawnTimer = 150;
+                  pickUpSFX.Play();
                   player.candyCount++;
                   for (int c = 0; c < guards.Length; c++)
                   {
@@ -248,6 +258,8 @@ namespace GrandTheftCandy
             #region Cotton Candy Radius Detection
             if (cottonCandyBomb.isActive)
             {
+                //cottonCandyBombSFX.Play();
+
                for (int i = 0; i < guards.Length; i++)
                {
                   if (cottonCandyBomb.isWithinDetectionRadius (guards[i]))
@@ -660,6 +672,7 @@ namespace GrandTheftCandy
          for (int i = 1; i < guards.Length; i++)
          {
             guards[i].resetNPC (false);
+            guards[i].detectionRadius = 0;
          }
 
          for (int i = 0; i < mothers.Length; i++)

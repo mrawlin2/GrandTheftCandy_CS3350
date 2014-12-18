@@ -11,6 +11,8 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Audio;
+
 
 namespace GrandTheftCandy
 {
@@ -1541,6 +1543,7 @@ namespace GrandTheftCandy
          m_CurrentDrawSequence = 0;
          m_EffectRadius = a_EffectRadius;
          m_textureFileName = a_textureFileName;
+
       }
 
       #endregion
@@ -1591,6 +1594,7 @@ namespace GrandTheftCandy
 
                if (keyboardInput.IsKeyDown (Keys.Space))
                {
+                  
                   this.Visible = true;
                   m_IsActive = true;
                   m_AbleToActivate = false;
