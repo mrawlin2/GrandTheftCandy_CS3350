@@ -100,7 +100,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>kpzd6sB7/+IC7Jf0NZYTOzWxE6U=</dsig:DigestValue>
+        <dsig:DigestValue>e8uTyrI6BVJdvnN8SifJD6PnA0g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -236,7 +236,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>2VPtHBDh3MVvHhrfeAi+s0PHNyM=</dsig:DigestValue>
+      <dsig:DigestValue>NYDH3hxGA2DvIKm6whJ7l9bMXs8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Resources\Images\kiosk0.xnb" size="103187">

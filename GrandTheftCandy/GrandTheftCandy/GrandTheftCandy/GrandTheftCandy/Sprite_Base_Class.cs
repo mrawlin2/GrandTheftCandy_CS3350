@@ -1588,7 +1588,7 @@ namespace GrandTheftCandy
 
             #region Activate
 
-            if (!m_IsActive && m_AbleToActivate &&(((GTC_Level1)this.Game).player.candyCount > 0))
+            if (!m_IsActive && m_AbleToActivate &&(((GTC_Level1)this.Game).player.candyCount > 2))
             {
                KeyboardState keyboardInput = Keyboard.GetState ();
 
@@ -1601,7 +1601,7 @@ namespace GrandTheftCandy
                   m_CooldownTimer = (15 * 30); //Half a minute
                   m_ActiveTimer = 60;
                   m_spritePosition = ((GTC_Level1)this.Game).player.playerPosition;
-                  ((GTC_Level1)this.Game).player.candyCount--;
+                  ((GTC_Level1)this.Game).player.candyCount -= 3;
                }
             }
 

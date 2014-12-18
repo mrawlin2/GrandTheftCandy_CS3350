@@ -75,6 +75,7 @@ namespace GrandTheftCandy
       Vector2 guardEnterPoint;
       Vector2[] momExitPath;
 
+   
       SoundEffect pickUpSFX;
       SoundEffect cottonCandyBombSFX;
       #endregion
@@ -152,7 +153,7 @@ namespace GrandTheftCandy
          Song backgroundSound = Content.Load<Song>(@"Resources\Sounds\gameMusic");
          
          MediaPlayer.Play(backgroundSound);
-         MediaPlayer.Volume = .2f;
+         MediaPlayer.Volume = .1f;
          MediaPlayer.IsRepeating = true;
 
          momExitPath = new Vector2[2];
